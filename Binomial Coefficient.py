@@ -1,7 +1,7 @@
-from math import prod
+from math import factorial
 
 def binom_coefficient(x, y): # Binomial Coefficient
     
-    return prod(range(1, x + 1))/(prod(range(1,y+1))*prod(range(1, x - y + 1)))
+    return factorial(x) / (factorial(y) * factorial(x - y))
 
-binom_coefficient(59, 6) # Test
+print(binom_coefficient(59, 6)) # Test
