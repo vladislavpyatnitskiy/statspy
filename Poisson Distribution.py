@@ -3,6 +3,9 @@ import numpy as np
 
 def poisson_distribution(x, y): # Poisson Distribution
   
-  return x ** y * np.exp(-x) / factorial(y)
+  if isinstance(y, int):
+      return x ** y * np.exp(-x) / factorial(y)
+  else:
+      return sum([x ** n * np.exp(-x) / factorial(n) for n in y])
 
 poisson_distribution(3, 1) # Test
